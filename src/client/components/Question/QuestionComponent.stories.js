@@ -15,7 +15,11 @@ export default {
 
 export const Component = () => (
   <QuestionComponent
-    title={text('Title', 'Question title')}
+    question={text(
+      'Question',
+      'Would you rather fight the Hulk or Captain America?',
+    )}
+    imageSrc={text('imageSrc', 'http://placekitten.com/800/500')}
     onClick={action('You have clicked a button')}
   />
 );

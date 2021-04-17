@@ -1,3 +1,37 @@
-.question-component h2 {
-  color: var(--black);
+.question-component {
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+}
+
+.question-box {
+  background-size: cover;
+}
+
+.question-box-filter {
+  height: 500px;
+  background: hsla(0, 0%, 0%, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question {
+  color: white;
+  font-size: 2rem;
+  padding: 50px;
+  text-align: center;
+}
+
+.options {
+  margin-top: 30px;
+}
+
+.option-label {
+  display: block;
+}
+
+.option-label + .option-label {
+  margin-top: 10px;
 }

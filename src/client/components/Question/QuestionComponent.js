@@ -4,12 +4,32 @@ import './QuestionComponent.styles.css';
 import BackButtonComponent from '../Buttons/BackButton/BackButtonComponent';
 import NextButtonComponent from '../Buttons/NextButton/NextButtonComponent';
 
-export default function QuestionComponent({ title, onClick, children }) {
+export default function QuestionComponent({
+  question,
+  imageSrc,
+  options,
+  onClick,
+}) {
   return (
     <div className="question-component">
-      <h2>{title}</h2>
-      <p>(this is a question component)</p>
-      {children}
+      <div
+        className="question-box"
+        style={{ backgroundImage: `url(${imageSrc})` }}
+      >
+        <div className="question-box-filter">
+          <p className="question">{question}</p>
+        </div>
+      </div>
+      <div className="options">
+        <label className="option-label">
+          <input type="radio" name="answer" />
+          The Hulk
+        </label>
+        <label className="option-label">
+          <input type="radio" name="answer" />
+          Captain America
+        </label>
+      </div>
       <BackButtonComponent onClick={onClick} />
       <NextButtonComponent onClick={onClick} />
     </div>
@@ -17,12 +37,13 @@ export default function QuestionComponent({ title, onClick, children }) {
 }
 
 QuestionComponent.propTypes = {
-  title: PropTypes.string.isRequired,
+  question: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
   onClick: PropTypes.func,
-  children: PropTypes.node,
 };
 
 QuestionComponent.defaultProps = {
+  options: null,
   onClick: null,
-  children: null,
 };
