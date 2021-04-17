@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './QuestionComponent.styles.css';
+import BackButtonComponent from '../Buttons/BackButton/BackButtonComponent';
+import NextButtonComponent from '../Buttons/NextButton/NextButtonComponent';
 
 export default function QuestionComponent({ title, onClick, children }) {
   return (
@@ -8,12 +10,8 @@ export default function QuestionComponent({ title, onClick, children }) {
       <h2>{title}</h2>
       <p>(this is a question component)</p>
       {children}
-      <button type="button" onClick={onClick}>
-        Back
-      </button>
-      <button type="button" onClick={onClick}>
-        Next
-      </button>
+      <BackButtonComponent onClick={onClick} />
+      <NextButtonComponent onClick={onClick} />
     </div>
   );
 }
