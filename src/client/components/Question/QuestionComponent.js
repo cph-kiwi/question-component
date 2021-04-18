@@ -8,6 +8,8 @@ export default function QuestionComponent({
   question,
   imageSrc,
   options,
+  selectedOption,
+  onOptionChange,
   onClick,
 }) {
   return (
@@ -21,14 +23,19 @@ export default function QuestionComponent({
         </div>
       </div>
       <div className="options">
-        <label className="option-label">
-          <input type="radio" name="answer" />
-          The Hulk
-        </label>
-        <label className="option-label">
-          <input type="radio" name="answer" />
-          Captain America
-        </label>
+        {options.map((option, i) => {
+          return (
+            <label className="option-label">
+              <input
+                type="radio"
+                name="answer"
+                checked={selectedOption === i}
+                onChange={() => onOptionChange(selectedOption)}
+              />
+              {option}
+            </label>
+          );
+        })}
       </div>
       <BackButtonComponent onClick={onClick} />
       <NextButtonComponent onClick={onClick} />
@@ -40,10 +47,14 @@ QuestionComponent.propTypes = {
   question: PropTypes.string.isRequired,
   imageSrc: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string),
+  selectedOption: PropTypes.number,
+  onOptionChange: PropTypes.func,
   onClick: PropTypes.func,
 };
 
 QuestionComponent.defaultProps = {
   options: null,
+  selectedOption: null,
+  onOptionChange: null,
   onClick: null,
 };

@@ -1,4 +1,4 @@
-import { text } from '@storybook/addon-knobs';
+import { array, number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 
@@ -20,6 +20,8 @@ export const Component = () => (
       'Would you rather fight the Hulk or Captain America?',
     )}
     imageSrc={text('imageSrc', 'http://placekitten.com/800/500')}
+    options={array('Options', ['The Hulk', 'Captain America'])}
+    selectedOption={number('Selected Option', 0)}
     onClick={action('You have clicked a button')}
   />
 );
