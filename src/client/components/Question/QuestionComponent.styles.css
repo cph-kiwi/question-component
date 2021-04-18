@@ -24,14 +24,14 @@
   text-align: center;
 }
 
-.options {
+.question-options {
   margin-top: 30px;
 }
 
-.option-label {
+.question-option-label {
   display: block;
 }
 
-.option-label + .option-label {
+.question-option-label + .question-option-label {
   margin-top: 10px;
 }

@@ -22,21 +22,22 @@ export default function QuestionComponent({
           <p className="question">{question}</p>
         </div>
       </div>
-      <div className="options">
+      <div className="question-options">
         {options.map((option, i) => {
           return (
-            <label className="option-label">
+            <label className="question-option-label">
               <input
                 type="radio"
                 name="answer"
                 checked={selectedOption === i}
-                onChange={() => onOptionChange(selectedOption)}
+                onChange={() => onOptionChange(i)}
               />
               {option}
             </label>
           );
         })}
       </div>
+      {/* If question is first then only render next button (not back) */}
       <BackButtonComponent onClick={onClick} />
       <NextButtonComponent onClick={onClick} />
     </div>

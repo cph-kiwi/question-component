@@ -17,10 +17,13 @@ export const Component = () => (
   <QuestionComponent
     question={text(
       'Question',
-      'Would you rather fight the Hulk or Captain America?',
+      'When visiting a website, what is it that you are most interested in?',
     )}
     imageSrc={text('imageSrc', 'http://placekitten.com/800/500')}
-    options={array('Options', ['The Hulk', 'Captain America'])}
+    options={array('Options', [
+      'How the website looks and how easy it is for the users',
+      'Logic behind how the website is built',
+    ])}
     selectedOption={number('Selected Option', 0)}
     onClick={action('You have clicked a button')}
   />
