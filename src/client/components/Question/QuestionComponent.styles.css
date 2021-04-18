@@ -24,8 +24,14 @@
   text-align: center;
 }
 
-.question-options {
+.question-options-multi-choice {
   margin-top: 30px;
+}
+
+.question-options-agree-scale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .question-option-label {
@@ -34,4 +40,10 @@
 
 .question-option-label + .question-option-label {
   margin-top: 10px;
+}
+
+.question-options-agree-scale > .question-option-label {
+  margin-top: 0;
+  margin-left: 4px;
+  margin-right: 4px;
 }
